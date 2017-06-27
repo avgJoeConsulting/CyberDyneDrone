@@ -3,6 +3,13 @@
   "description": "review of changes",
   "scripts": {
   },
+  "environments": {
+    "test": {
+      "env": {
+        "PHOTON_TORPEDOES": "online"
+      }
+    }
+  },
   "env": {
   },
   "formation": {
