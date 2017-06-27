@@ -1,8 +1,6 @@
 {
   "name": "CyberDyneDrone",
-  "description": "review of changes",
-  "scripts": {
-  },
+  "description": "review of changes",  
   "environments": {
     "test": {
       "env": {
