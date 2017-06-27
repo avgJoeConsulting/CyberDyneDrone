@@ -168,7 +168,8 @@ function identifyPATH(testPath, groupId) {
    				if (name == nameToFind) {   
     					var tts = require('./TextToSpeechService.js');  
 				        console.log("Found You" + nameToFind + ". I Hope You Are Having A Great Day!");
- 					tts.Synthesize("Found You " + nameToFind + ". I Hope You Are Having A Great Day!");
+ 					//tts.Synthesize("Found You " + nameToFind + ". I Hope You Are Having A Great Day!");
+ 					tts.Synthesize("Found You Rikki". I Hope You Are Having A Great Day!");
     					client.land();   
     					console.log("Should have landed by now");
  					found = true;			
