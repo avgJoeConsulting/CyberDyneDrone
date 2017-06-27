@@ -3,6 +3,9 @@
     "test": {
       "scripts": {
         "test": "node -v"
+      },
+       "env": {
+        "PHOTON_TORPEDOES": "online"
       }
     }
   }
