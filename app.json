@@ -9,15 +9,5 @@
         "PHOTON_TORPEDOES": "online"
       }
     }
-  },
-  "env": {
-  },
-  "formation": {
-  },
-  "addons": [
-
-  ],
-  "buildpacks": [
-
-  ]
+  }
 }
