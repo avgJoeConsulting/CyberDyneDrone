@@ -37,7 +37,7 @@ app.get('/', function (req, res) {
 // to take off
 app.get('/takeoff', function(req, res) {
   client.takeoff();
-  console.log("jbone DEV Drone Taking Off");
+  console.log("DEV Drone Taking Off");
 });
 
 // This router is sending a command to the drone
