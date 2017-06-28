@@ -63,12 +63,13 @@ app.get('/calibrate', function(req, res) {
 app.get('/hover', function(req, res) {
    client.stop(0);
    console.log("Hover");
+ 	client.on('navdata', console.log);
  	client.on('navdata', function(sensordata) {
 	var payload = JSON.stringify({
   		deviceId: deviceId,
   		location: location,
   		altitude: sensordata.demo.altitude,
- 		 batterypercentage: sensordata.demo.batteryPercentage});
+ 		batterypercentage: sensordata.demo.batteryPercentage});
         
 	// Create the message based on the payload JSON
 		var message = new device.Message(payload);
@@ -80,7 +81,8 @@ app.get('/hover', function(req, res) {
 	droneclient.sendEvent(message, printResultFor('send'));
    	console.log("Drone Altitude: " + sensordata.demo.altitude);
  	console.log("Drone Battery Percentage: " + sensordata.demo.batteryPercentage);
- 	}); 
+        console.log("Drone Battery Percentage: " + sensordata.demo.batteryPercentage);
+	}); 
 	// Helper function to print results in the console
 	function printResultFor(op) {
  	  return function printResult(err, res) {
