@@ -19,7 +19,7 @@ var clientFromConnectionString = require('azure-iot-device-http').clientFromConn
 
 var location = process.env.DEVICE_LOCATION || 'Drone at Home';
 
-var connectionString = process.env.IOTHUB_CONN || 'HostName=joedronedemo.azure-devices.net;DeviceId=parrotdrone;SharedAccessKey=4C3tHFsBqzpCH888sqw5bkUVatvaRI5xaPzaxYqshCA=';
+var connectionString = process.env.IOTHUB_CONN || 'HostName=cyberdynedronedemo.azure-devices.net;DeviceId=parrotdrone;SharedAccessKey=1ZVOHAaBc4BZz3fJ5bOgLHx99MCpf4pGUDBO32vVnmI=';
 
 // Create droneclient that will manage the connection to your IoT Hub
 // Created in the context of an Azure IoT device, which is why
