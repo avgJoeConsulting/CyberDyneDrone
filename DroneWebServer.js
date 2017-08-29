@@ -19,7 +19,7 @@ var clientFromConnectionString = require('azure-iot-device-http').clientFromConn
 
 var location = process.env.DEVICE_LOCATION || 'Drone at Home';
 
-var connectionString = process.env.IOTHUB_CONN || 'HostName=joedronedemo.azure-devices.net;DeviceId=parrotdrone;SharedAccessKey=4C3tHFsBqzpCH888sqw5bkUVatvaRI5xaPzaxYqshCA=';
+var connectionString = process.env.IOTHUB_CONN || 'HostName=cyberdynedronedemo.azure-devices.net;DeviceId=parrotdrone;SharedAccessKey=1ZVOHAaBc4BZz3fJ5bOgLHx99MCpf4pGUDBO32vVnmI=';
 
 // Create droneclient that will manage the connection to your IoT Hub
 // Created in the context of an Azure IoT device, which is why
@@ -37,7 +37,11 @@ app.get('/', function (req, res) {
 // to take off
 app.get('/takeoff', function(req, res) {
   client.takeoff();
+<<<<<<< HEAD
   console.log("Barth Drone Taking Off");
+=======
+  console.log("Drone Drone Taking Off");
+>>>>>>> origin/master
 });
 
 // This router is sending a command to the drone
@@ -63,12 +67,13 @@ app.get('/calibrate', function(req, res) {
 app.get('/hover', function(req, res) {
    client.stop(0);
    console.log("Hover");
+ 	client.on('navdata', console.log);
  	client.on('navdata', function(sensordata) {
 	var payload = JSON.stringify({
   		deviceId: deviceId,
   		location: location,
   		altitude: sensordata.demo.altitude,
- 		 batterypercentage: sensordata.demo.batteryPercentage});
+ 		batterypercentage: sensordata.demo.batteryPercentage});
         
 	// Create the message based on the payload JSON
 		var message = new device.Message(payload);
@@ -80,7 +85,8 @@ app.get('/hover', function(req, res) {
 	droneclient.sendEvent(message, printResultFor('send'));
    	console.log("Drone Altitude: " + sensordata.demo.altitude);
  	console.log("Drone Battery Percentage: " + sensordata.demo.batteryPercentage);
- 	}); 
+        console.log("Drone Battery Percentage: " + sensordata.demo.batteryPercentage);
+	}); 
 	// Helper function to print results in the console
 	function printResultFor(op) {
  	  return function printResult(err, res) {
@@ -168,7 +174,8 @@ function identifyPATH(testPath, groupId) {
    				if (name == nameToFind) {   
     					var tts = require('./TextToSpeechService.js');  
 				        console.log("Found You" + nameToFind + ". I Hope You Are Having A Great Day!");
- 					tts.Synthesize("Found You" + nameToFind + ". I Hope You Are Having A Great Day!");
+ 					tts.Synthesize("Found You " + nameToFind + ". I Hope You Are Having A Great Day!");
+ 					//tts.Synthesize("Found You Rikki. I Hope You Are Having A Great Day!");
     					client.land();   
     					console.log("Should have landed by now");
  					found = true;			

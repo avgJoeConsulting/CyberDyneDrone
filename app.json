@@ -1,16 +1,12 @@
 {
-  "name": "CyberDyneDrone",
-  "description": "review of changes",
-  "scripts": {
-  },
-  "env": {
-  },
-  "formation": {
-  },
-  "addons": [
-
-  ],
-  "buildpacks": [
-
-  ]
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "node -v"
+      },
+       "env": {
+        "PHOTON_TORPEDOES": "online"
+      }
+    }
+  }
 }
