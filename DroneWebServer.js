@@ -37,11 +37,7 @@ app.get('/', function (req, res) {
 // to take off
 app.get('/takeoff', function(req, res) {
   client.takeoff();
-<<<<<<< HEAD
-  console.log("Barth Drone Taking Off");
-=======
   console.log("Drone Drone Taking Off");
->>>>>>> origin/master
 });
 
 // This router is sending a command to the drone
