@@ -1,4 +1,3 @@
-
 var device = require('azure-iot-device');
 var bebop = require("node-bebop");
 
